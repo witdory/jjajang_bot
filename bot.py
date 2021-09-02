@@ -58,7 +58,7 @@ async def 전적(ctx, *, text):
 
 @bot.command()
 async def 티어(ctx, *, text):
-    soltier,subtier = crawl.nowtier(text).replace(('Bronze','브론즈'),('Silver','실버'))
+    soltier,subtier = crawl.nowtier(text)
     await ctx.send(f"{text}님의 현재 티어\n솔로랭크 : {soltier}\n자유랭크 : {subtier}")
     print(soltier,subtier)
 
