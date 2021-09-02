@@ -54,7 +54,7 @@ async def 따라하기(ctx, *, text):
 @bot.command()
 async def 전적(ctx, *, text):
     await ctx.send(f"{text}님의 최근 전적 불러오는중")
-    await ctx.send(crawl.gamelog(text))
+    await ctx.send('```\n'+crawl.gamelog(text)+'\n```')
 
 @bot.command()
 async def 티어(ctx, *, text):
