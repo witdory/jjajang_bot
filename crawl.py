@@ -16,24 +16,27 @@ from tabulate import tabulate
 options = webdriver.ChromeOptions()
 # 창 숨기는 옵션 추가
 options.add_argument("headless")
-driver = webdriver.Chrome("/Users/goyoonjae/Desktop/dongmonitor/chromedriver",options=options)
+# options.add_argument('--disable-gpu')
+driver = webdriver.Chrome("/usr/bin/chromedriver",options=options)
 # driver = webdriver.Chrome("/Users/goyoonjae/Desktop/dongmonitor/chromedriver")
 
 def gamelog(nickname):
 
-    driver = webdriver.Chrome("/Users/goyoonjae/Desktop/dongmonitor/chromedriver",options=options)
+    driver = webdriver.Chrome("/usr/bin/chromedriver",options=options)
     url = 'https://www.op.gg/summoner/userName='
     # inp = input('롤 닉넴 입력 : ')
     url = url+nickname
+
     driver.get(url)
+    print('사이트 접속')
     alert = Alert(driver)
     req = requests.get(url)
     html = req.text
     soup = BeautifulSoup(html,'html.parser')
     pd.set_option('expand_frame_repr',False)
-
+    
     driver.find_element_by_css_selector('#SummonerRefreshButton').click()
-
+    print('.click()')
     try:
         # time.sleep(3)
         alert = Alert(driver)
@@ -99,7 +102,7 @@ def gamelog(nickname):
     
 
 def nowtier(nickname):
-    driver = webdriver.Chrome("/Users/goyoonjae/Desktop/dongmonitor/chromedriver",options=options)
+    driver = webdriver.Chrome("/usr/bin/chromedriver",options=options)
     url = 'https://www.op.gg/summoner/userName='
     # inp = input('롤 닉넴 입력 : ')
     url = url+nickname
