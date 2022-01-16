@@ -5,7 +5,7 @@ import crawl
 import numpy as np
 import pandas as pd
 
-token = "ODgyMTYyNzQ5NTM3Mzk0NzE4.YS3YFQ.l_WeAxA6uHik6VbLwfOKswapr7M"
+token = ""
 bot_activity = discord.Game(name='동현우 감시')
 bot = commands.Bot(command_prefix='.',activity = bot_activity)
 
